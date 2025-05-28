@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Нейросеть</title>
+        <script src="neuralnetwork.js"></script>
+    </head>
+    <body>
+        <style type="text/css">
+            span_result {
+                font-size: 1.75em;
+                position: absolute;
+                height: 46px; 
+                width: 1000;
+                top: 210px;
+                left: 1250px;
+            }
+            span_error {
+                font-size: 1.75em;
+                position: absolute;
+                height: 46px; 
+                width: 1000;
+                top: 822px;
+                left: 10px;
+            }
+            span_rate {
+                font-size: 1.75em;
+                position: absolute;
+                height: 46px; 
+                width: 1000;
+                top: 10px;
+                left: 1250px;
+            }
+            span_input {
+                font-size: 1.75em;
+                position: absolute;
+                height: 46px; 
+                width: 1000;
+                top: 105px;
+                left: 1250px;
+            }
+            input {
+                font-size: 1.5em; 
+                color: steelblue; 
+                background: transparent; 
+                border: none;
+            }
+        </style>
+        <canvas id="canvas" width="1200" height="800" style="border: 2px solid black;"></canvas>
+        <span_error>Ошибка:</span_error><input type="text" disabled id="display_error" value="" style="height: 35px;width: 400px; font-size: 1.5em; color: black; border: 1.5px solid black; position: absolute; top: 820px; left: 130px">
+        <button type="button" id="button_learn" style="height: 35px;width: 200px; font-size: 1.5em; border: 1.5px solid black; position: absolute; top: 55px; left: 1250px;">Обучить</button><br>
+        <button type="button" id="button_result" style="height: 35px;width: 200px; font-size: 1.5em; border: 1.5px solid black; position: absolute; top: 165px; left: 1250px;">XOR</button><br>
+        <span_input>Ввод:</span_input>
+        <input type="text" id="display_data1" value="" style="height: 35px;width: 35px; color: black; border: 1.5px solid black; position: absolute; top: 105px; left: 1320px;">
+        <input type="text" id="display_data2" value="" style="height: 35px;width: 35px; color: black; border: 1.5px solid black; position: absolute; top: 105px; left: 1370px;"><br>
+        <input type="text" disabled id="display_input1" value="" style="height: 30px;width: 20px; position: absolute; top: 240px; left: 195px">
+        <input type="text" disabled id="display_input2" value="" style="height: 30px;width: 20px; position: absolute; top: 540px; left: 195px">
+        <input type="text" disabled id="display_hidden1" value="" style="height: 30px;width: 58px; position: absolute; top: 90px; left: 576px">
+        <input type="text" disabled id="display_hidden2" value="" style="height: 30px;width: 58px; position: absolute; top: 390px; left: 576px">
+        <input type="text" disabled id="display_hidden3" value="" style="height: 30px;width: 58px; position: absolute; top: 690px; left: 576px">
+        <input type="text" disabled id="display_output" value="" style="height: 30px;width: 58px; position: absolute; top: 390px; left: 976px">
+        <input type="text" disabled id="weigth11" value="" style="height: 30px;width: 58px; position: absolute; top: 160px; left: 350px; transform: rotate(-20deg)">
+        <input type="text" disabled id="weigth12" value="" style="height: 30px;width: 58px; position: absolute; top: 290px; left: 350px; transform: rotate(20deg)">
+        <input type="text" disabled id="weigth13" value="" style="height: 30px;width: 58px; position: absolute; top: 420px; left: 360px; transform: rotate(48deg)">
+        <input type="text" disabled id="weigth21" value="" style="height: 30px;width: 58px; position: absolute; top: 435px; left: 250px; transform: rotate(-48deg)">
+        <input type="text" disabled id="weigth22" value="" style="height: 30px;width: 58px; position: absolute; top: 480px; left: 300px; transform: rotate(-20deg)">
+        <input type="text" disabled id="weigth23" value="" style="height: 30px;width: 58px; position: absolute; top: 595px; left: 370px; transform: rotate(20deg)">
+        <input type="text" disabled id="weigthH1O" value="" style="height: 30px;width: 58px; position: absolute; top: 230px; left: 790px; transform: rotate(37deg)">
+        <input type="text" disabled id="weigthH2O" value="" style="height: 30px;width: 58px; position: absolute; top: 375px; left: 770px; transform: rotate(0deg)">
+        <input type="text" disabled id="weigthH3O" value="" style="height: 30px;width: 58px; position: absolute; top: 535px; left: 760px; transform: rotate(-37deg)">
+        <span_rate>Скорость обучения:</span_rate><input type="text" id="display_rate" value="" style="height: 35px;width: 80px; font-size: 1.5em; color: black; border: 1.5px solid black; position: absolute; top: 10px; left: 1500px">
+        <span_result>Результат:</span_result> <input type="text" disabled id="display_result" value="" style="height: 35px;width: 120px; font-size: 1.5em; color: black; border: 1.5px solid black; position: absolute; top: 210px; left: 1380px;">
+    </body>
+</html>
